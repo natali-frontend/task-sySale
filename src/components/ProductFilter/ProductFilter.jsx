@@ -1,16 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from "./ProductFilter.module.scss";
-
-export const ProductFilter = ({item, count, setCount}) => {
+export const ProductFilter = ({item, count, setCount, filterData = ['Желтый', 'Красный', 'Зелёный']}) => {
+    const [isActive, setIsActive] = useState(false);
+    const [filterValue, setFilterValue] = useState('Цвет')
     return (
         <div className={styles.filter}>
             <div className={styles.filterTop}>
-                <div className={styles.filterColor}>
-                    <span>Цвет</span>
+                <div className={`${styles.filterColor} ${isActive ? styles.active : ''}`}
+                     onClick={() => setIsActive(!isActive)}
+                     onMouseLeave={() => {
+                         if(isActive) {
+                             setIsActive(false);
+                         }
+                     }}
+                >
+                    <span>{filterValue}</span>
                     <ul>
-                        <li>Жёлтый</li>
-                        <li>Красный</li>
-                        <li>Зелёный</li>
+                        {
+                            filterData.map((item, idx) => <li key={idx} onClick={() => setFilterValue(item)}>{item}</li>)
+                        }
                     </ul>
                 </div>
                 <span className={styles.price}>{item.price} грн</span>
