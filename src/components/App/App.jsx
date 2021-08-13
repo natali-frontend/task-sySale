@@ -16,6 +16,7 @@ const items = [
         image2: productImage1_2,
         title: "Шампунь",
         name: 'radio1',
+        volume: [100, 200, 300],
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
         price: 200
     },
@@ -24,6 +25,7 @@ const items = [
         image2: productImage2_2,
         title: "Шампунь",
         name: 'radio2',
+        volume: [100, 200, 300],
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
         price: 300
     },
@@ -32,6 +34,7 @@ const items = [
         image2: productImage3_2,
         title: "Шампунь",
         name: 'radio3',
+        volume: [100, 200, 300],
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
         price: 350
     }

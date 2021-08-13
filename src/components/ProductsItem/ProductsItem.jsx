@@ -9,9 +9,9 @@ export const ProductItem = ({item, index}) => {
     const [addedToCompare, setAaddedToCompare] = useState(false);
     return (
         <div className={styles.productsItem}>
-                            <span className={styles.new}>
-                                New
-                            </span>
+            <span className={styles.new}>
+                New
+            </span>
             <button className={styles.compare} onClick={() => setAaddedToCompare(!addedToCompare)}>
                 {
                     addedToCompare ? <DoneSvg/> : <CompareSvg />
@@ -25,9 +25,7 @@ export const ProductItem = ({item, index}) => {
             </div>
             <div className={styles.itemDescription}>
                 <h2>{item.title}</h2>
-                <p>
-                    {item.description}
-                </p>
+                <p>{item.description}</p>
             </div>
             <ProductFilter item={item} count={count} setCount={setCount} index={index} />
         </div>

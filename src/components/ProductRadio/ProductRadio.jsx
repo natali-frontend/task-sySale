@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from "../ProductFilter/ProductFilter.module.scss";
 
-export const ProductRadio = ({item, index, value}) => {
-    const [radioValue, setRadioValue] = useState(100);
-    const handleRadio = (e) => {
-        setRadioValue(e)
-    };
-    console.log(radioValue, 'radioValue');
+export const ProductRadio = ({item, index, value, selectedValue}) => {
     return (
         <div className={styles.radio} >
-            <input type='radio' name={item.name}  value={value} checked={radioValue===value} onChange={()=>handleRadio(value)}/>
-            {/*<label htmlFor={`radio${item.name}${index}`} >{value} мл</label>*/}
+            <input type='radio'
+                   name={item.name}
+                   id={item.name + index}
+                   value={value}
+                   defaultChecked={Number(selectedValue) === value}
+            />
+            <label htmlFor={item.name + index} >{value} мл</label>
         </div>
     )
 };

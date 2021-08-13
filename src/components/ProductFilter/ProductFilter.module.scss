@@ -81,7 +81,7 @@
       }
     }
   }
-  form {
+  .radioGroup {
     display:        flex;
     flex-direction: column;
     margin-bottom:  15px;
@@ -89,33 +89,37 @@
       position:      relative;
       margin-bottom: 10px;
     }
-    //label {
-    //  font-size:   16px;
-    //  font-weight: 500;
-    //  &:before {
-    //    content:        "";
-    //    position:       absolute;
-    //    top:            50%;
-    //    left:           0;
-    //    z-index:        1;
-    //    width:          22px;
-    //    height:         22px;
-    //    background:     #DEDEDE;
-    //    border-radius:  5px;
-    //    transform:      translate(0, -50%);
-    //    cursor:         pointer;
-    //    pointer-events: none;
-    //  }
-    //}
-    //input {
-    //  margin-right: 15px;
-    //  width:        15px;
-    //  height:       15px;
-    //  cursor:       pointer;
-    //  &:checked + label:before {
-    //    content: url("../../images/icons/radio-cheked.svg");
-    //  }
-    //}
+    label {
+      font-size:   16px;
+      font-weight: 500;
+      cursor:      pointer;
+      padding:     0 0 0 36px;
+      &:before {
+        content:        "";
+        position:       absolute;
+        top:            50%;
+        left:           0;
+        z-index:        1;
+        width:          22px;
+        height:         22px;
+        background:     #DEDEDE;
+        border-radius:  5px;
+        transform:      translate(0, -50%);
+        cursor:         pointer;
+        pointer-events: none;
+      }
+    }
+    input {
+      margin-right: 15px;
+      width:        15px;
+      height:       15px;
+      cursor:       pointer;
+      overflow:     hidden;
+      position:     absolute;
+      &:checked + label:before {
+        content: url("../../images/icons/radio-cheked.svg");
+      }
+    }
   }
   .filterBottom {
     .quantity {

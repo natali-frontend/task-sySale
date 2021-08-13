@@ -5,6 +5,12 @@ import { ProductRadio } from "../ProductRadio/ProductRadio";
 export const ProductFilter = ({item, count, setCount, index, filterData = ['Желтый', 'Красный', 'Зелёный']}) => {
     const [isActive, setIsActive] = useState(false);
     const [filterValue, setFilterValue] = useState('Цвет');
+    const [selectedVolume, setSelectedVolume] = useState(item.volume[0]);
+
+    const handleRadio = (e) => {
+        setSelectedVolume(e.target.value);
+    };
+
     return (
         <div className={styles.filter}>
             <div className={styles.filterTop}>
@@ -25,11 +31,17 @@ export const ProductFilter = ({item, count, setCount, index, filterData = ['Же
                 </div>
                 <span className={styles.price}>{item.price} грн</span>
             </div>
-            <form>
-                <ProductRadio item={item} index={index} value={100} />
-                <ProductRadio item={item} index={index} value={200} />
-                <ProductRadio item={item} index={index} value={300} />
-            </form>
+            <div className={styles.radioGroup} onChange={ (e) => handleRadio(e) }>
+                {item.volume.map((radio, idx) => {
+                    return <ProductRadio
+                        key={idx}
+                        item={item}
+                        index={idx}
+                        value={radio}
+                        selectedValue={selectedVolume}
+                    />
+                })}
+            </div>
             <div className={styles.filterBottom}>
                 <div className={styles.quantity}>
                     <div className={styles.quantityButtons}>
