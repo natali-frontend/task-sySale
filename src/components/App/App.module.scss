@@ -1,3 +1,7 @@
-.app {
-  position: relative;
+.products {
+  padding: 5% 0;
+  .productsList {
+    display:         flex;
+    justify-content: space-between;
+  }
 }

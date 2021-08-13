@@ -1,0 +1,52 @@
+@import "styles/main";
+
+* {
+  outline:     none;
+  box-sizing:  border-box;
+  margin:      0;
+  padding:     0;
+  font-family: 'SF UI Display', sans-serif;
+}
+
+.container {
+  max-width: 1830px;
+  margin:    0 auto;
+  padding:   0 20px;
+}
+
+.btn {
+  display:       inline-block;
+  background:    linear-gradient(261.65deg, #EFBB37 -3.95%, #CF9E1F 109.44%);
+  color:         #fff;
+  border-radius: 30px;
+  font-size:     18px;
+  font-weight:   600;
+  max-width:     310px;
+  width:         65%;
+  text-align:    center;
+  padding:       9px 0;
+  transition:    .3s linear;
+  &:hover {
+    box-shadow: 0 0 20px 0 #E8CB80;
+    background: linear-gradient(261.65deg, #E9B32C -3.95%, #BF911A 109.44%);
+  }
+  &:active {
+    opacity: .8;
+  }
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+}
