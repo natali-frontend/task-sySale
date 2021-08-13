@@ -1,3 +1,5 @@
+@import "../../styles/variables";
+
 .productsItem {
   position:      relative;
   background:    #F8FAFC;
@@ -11,7 +13,7 @@
   }
   .itemImage {
     position:      relative;
-    background:    #fff;
+    background:    $white;
     border-radius: 25px;
     max-width:     256px;
     width:         56%;
@@ -69,11 +71,11 @@
   text-transform: uppercase;
   background:     linear-gradient(261.65deg, #EFBB37 -3.95%, #CF9E1F 109.44%);
   border-radius:  30px;
-  color:          #fff;
+  color:          $white;
   padding:        6px 21px;
   line-height:    1;
   transition:     .3s linear;
-  box-shadow:     0 0 15px 0 #0000001A;
+  box-shadow:     0 0 15px 0 $boxShadowColor;
 }
 
 .compare {
@@ -85,7 +87,7 @@
   right:           5.3%;
   width:           47px;
   height:          47px;
-  background:      #fff;
+  background:      $white;
   border-radius:   30px;
   box-shadow:      0 0 15px rgba(0, 0, 0, 0.1);
   cursor:          pointer;
