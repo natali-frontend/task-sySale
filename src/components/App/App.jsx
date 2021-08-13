@@ -15,6 +15,7 @@ const items = [
         image: productImage1_1,
         image2: productImage1_2,
         title: "Шампунь",
+        name: 'radio1',
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
         price: 200
     },
@@ -22,6 +23,7 @@ const items = [
         image: productImage2_1,
         image2: productImage2_2,
         title: "Шампунь",
+        name: 'radio2',
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
         price: 300
     },
@@ -29,6 +31,7 @@ const items = [
         image: productImage3_1,
         image2: productImage3_2,
         title: "Шампунь",
+        name: 'radio3',
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
         price: 350
     }
@@ -41,7 +44,7 @@ function App() {
                 <div className='container'>
                     <div className={styles.productsList}>
                         {items.map((item, index) => (
-                            <ProductItem key={index} item={item} />
+                            <ProductItem key={index} item={item} index={index} />
                         ))}
                     </div>
                 </div>

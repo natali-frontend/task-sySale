@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import styles from "./ProductsItem.module.scss";
 import { ReactComponent as CompareSvg } from "../../images/icons/compare.svg";
 import { ReactComponent as DoneSvg } from "../../images/icons/check-mark.svg";
-
 import { ProductFilter } from '../ProductFilter/ProductFilter';
 
-export const ProductItem = ({item}) => {
+export const ProductItem = ({item, index}) => {
     const [count, setCount] = useState(1);
     const [addedToCompare, setAaddedToCompare] = useState(false);
     return (
@@ -30,7 +29,7 @@ export const ProductItem = ({item}) => {
                     {item.description}
                 </p>
             </div>
-            <ProductFilter item={item} count={count} setCount={setCount} />
+            <ProductFilter item={item} count={count} setCount={setCount} index={index} />
         </div>
     )
 };

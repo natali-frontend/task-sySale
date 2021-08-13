@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import styles from "./ProductFilter.module.scss";
-export const ProductFilter = ({item, count, setCount, filterData = ['Желтый', 'Красный', 'Зелёный']}) => {
+import { ProductRadio } from "../ProductRadio/ProductRadio";
+
+export const ProductFilter = ({item, count, setCount, index, filterData = ['Желтый', 'Красный', 'Зелёный']}) => {
     const [isActive, setIsActive] = useState(false);
-    const [filterValue, setFilterValue] = useState('Цвет')
+    const [filterValue, setFilterValue] = useState('Цвет');
     return (
         <div className={styles.filter}>
             <div className={styles.filterTop}>
@@ -24,18 +26,9 @@ export const ProductFilter = ({item, count, setCount, filterData = ['Желты�
                 <span className={styles.price}>{item.price} грн</span>
             </div>
             <form>
-                <div className={styles.radio}>
-                    <input type='radio' name='radio' id='radio1' />
-                    <label htmlFor='radio1'>100 мл</label>
-                </div>
-                <div className={styles.radio}>
-                    <input type='radio' name='radio' id='radio2' />
-                    <label htmlFor='radio2'>200 мл</label>
-                </div>
-                <div className={styles.radio}>
-                    <input type='radio' name='radio' id='radio3' />
-                    <label htmlFor='radio3'>300 мл</label>
-                </div>
+                <ProductRadio item={item} index={index} value={100} />
+                <ProductRadio item={item} index={index} value={200} />
+                <ProductRadio item={item} index={index} value={300} />
             </form>
             <div className={styles.filterBottom}>
                 <div className={styles.quantity}>
