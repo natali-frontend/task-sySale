@@ -27,7 +27,7 @@ export const ProductItem = ({item, index}) => {
                 <h2>{item.title}</h2>
                 <p>{item.description}</p>
             </div>
-            <ProductFilter item={item} count={count} setCount={setCount} index={index} />
+            <ProductFilter item={item} index={index} />
         </div>
     )
 };

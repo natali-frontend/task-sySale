@@ -1,15 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from "./ProductFilter.module.scss";
 import { ProductRadio } from "../ProductRadio/ProductRadio";
 
-export const ProductFilter = ({item, count, setCount, index, filterData = ['Желтый', 'Красный', 'Зелёный']}) => {
+export const ProductFilter = ({item, filterData = ['Желтый', 'Красный', 'Зелёный']}) => {
     const [isActive, setIsActive] = useState(false);
     const [filterValue, setFilterValue] = useState('Цвет');
     const [selectedVolume, setSelectedVolume] = useState(item.volume[0]);
-
+    const [count, setCount] = useState(1);
+    const [totalPrice, setTotalPrice] = useState(0);
     const handleRadio = (e) => {
         setSelectedVolume(e.target.value);
     };
+    useEffect(() => {
+        setTotalPrice(count * (item.price * selectedVolume / 100));
+    }, [count, selectedVolume]);
 
     return (
         <div className={styles.filter}>
@@ -29,7 +33,7 @@ export const ProductFilter = ({item, count, setCount, index, filterData = ['Же
                         }
                     </ul>
                 </div>
-                <span className={styles.price}>{item.price} грн</span>
+                <span className={styles.price}>{totalPrice || item.price} грн</span>
             </div>
             <div className={styles.radioGroup} onChange={ (e) => handleRadio(e) }>
                 {item.volume.map((radio, idx) => {
